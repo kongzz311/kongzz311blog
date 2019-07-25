@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    }
+  };
+</script>
+
+  <meta name="description" content="使用keras能帮助你快速的构建和训练自己的深度学习模型">
+<meta name="keywords" content="Keras">
+<meta property="og:type" content="article">
+<meta property="og:title" content="keras常用命令汇总">
+<meta property="og:url" content="http://yoursite.com/2019/01/29/keras常用命令汇总/index.html">
+<meta property="og:site_name" content="Kong Zhenzhou">
+<meta property="og:description" content="使用keras能帮助你快速的构建和训练自己的深度学习模型">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNc79ly1g3hdnhgfyjj30go07374h.jpg">
+<meta property="og:updated_time" content="2019-05-28T14:02:18.287Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="keras常用命令汇总">
+<meta name="twitter:description" content="使用keras能帮助你快速的构建和训练自己的深度学习模型">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006tNc79ly1g3hdnhgfyjj30go07374h.jpg">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/01/29/keras常用命令汇总/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  
+  <title>keras常用命令汇总 | Kong Zhenzhou</title>
+  
+
+
+
+
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6029c9b0ce892a0d5c97f226400acfcd";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Kong Zhenzhou</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/29/keras常用命令汇总/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kong Zhenzhou">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kong Zhenzhou">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">keras常用命令汇总
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-01-29 11:09:02" itemprop="dateCreated datePublished" datetime="2019-01-29T11:09:02+08:00">2019-01-29</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-05-28 22:02:18" itemprop="dateModified" datetime="2019-05-28T22:02:18+08:00">2019-05-28</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/" itemprop="url" rel="index"><span itemprop="name">ML</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://ww1.sinaimg.cn/large/006tNc79ly1g3hdnhgfyjj30go07374h.jpg" alt><br>使用keras能帮助你快速的构建和训练自己的深度学习模型</p>
+<a id="more"></a>
+<h1 id="数据科学笔记"><a href="#数据科学笔记" class="headerlink" title="数据科学笔记"></a>数据科学笔记</h1><p>Keras is a powerful and easy-to-use deep learning library for Theano and TensorFlow that provide a high-level neural networks API to develop and evaluate deep learning models.</p>
+<h2 id="Keras"><a href="#Keras" class="headerlink" title="Keras"></a>Keras</h2><h3 id="Keras-1"><a href="#Keras-1" class="headerlink" title="Keras"></a>Keras</h3><p>一个基础例子</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> keras.models <span class="keyword">import</span> Sequential</span><br><span class="line"><span class="keyword">from</span> kers.layers <span class="keyword">import</span> Dense</span><br><span class="line">data = np.random.random((<span class="number">1000</span>, <span class="number">100</span>))</span><br><span class="line">model= Sequential()</span><br><span class="line">model.add(Dense(<span class="number">32</span>,</span><br><span class="line">               activation = <span class="string">'relu'</span>,</span><br><span class="line">               input_dim = <span class="number">100</span>))</span><br><span class="line">model.add(Dense(<span class="number">1</span>, activation = <span class="string">'sigmoid'</span>))</span><br><span class="line">model.compile(optimizer = <span class="string">'rmsprop'</span>,</span><br><span class="line">             loss = <span class="string">'binary_crossentropy'</span>,</span><br><span class="line">             metrics = [<span class="string">'accuracy'</span>])</span><br><span class="line">model.fit(data, labels, epochs = <span class="number">10</span>, batch_size = <span class="number">32</span>)</span><br><span class="line">predictions = model.predict(data)</span><br></pre></td></tr></table></figure>
+
+<h3 id="导入数据"><a href="#导入数据" class="headerlink" title="导入数据"></a>导入数据</h3><p>Your data needs to be stored as Numpy arrays or a list of Numpy arrays. Ideally, you split the data in training and test sets, for which you can also resort to the train_test_split module of sklearn.cross_validataion.</p>
+<p>Keras Data Sets</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.dataset <span class="keyword">import</span> boston_housing, ministm，cifar10, imdb</span><br><span class="line">(x_train, y_train), (x_test, y_test) = minst.load_data()</span><br><span class="line">(x_train2, y_train2), (x_test2, y_test2) = boston_housing.load_data()</span><br><span class="line">(x_train3, y_train3), (x_test3, y_test3) = cifar10.load_data()</span><br><span class="line">(x_train4, y_train4), (x_test4, y_test4) = imdb.load_data(num_words = <span class="number">20000</span>)</span><br><span class="line">num_classes = <span class="number">10</span></span><br></pre></td></tr></table></figure>
+
+<p>Other</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line">data = np.loadtext(urlopen(url, delimiter = <span class="string">","</span>))</span><br><span class="line">X = data[:, <span class="number">0</span>:<span class="number">8</span>]</span><br><span class="line">Y = data[:, <span class="number">8</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="处理数据"><a href="#处理数据" class="headerlink" title="处理数据"></a>处理数据</h3><p>Sequence Padding</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.processing <span class="keyword">import</span> sequence</span><br><span class="line">x_train4 = sequence.pad_sequences(x_train4, maxlen = <span class="number">80</span>)</span><br><span class="line">x_test4 = sequence.pad_sequences(x_test4, maxlen = <span class="number">80</span>)</span><br></pre></td></tr></table></figure>
+
+<p>One-Hot Encoding</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.utils <span class="keyword">import</span> to_categorical</span><br><span class="line">Y_train = to_categorical(y_train, num_classes)</span><br><span class="line">Y_test = to_categorical(y_test, num_classes)</span><br><span class="line">Y_train3 = to_categorical(y_train3, num_classes)</span><br><span class="line">Y_test3 = to_categorical(y_test3, num_classes)</span><br></pre></td></tr></table></figure>
+
+<p>Train and test Setssd</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line">X_train5, X_test4, y_train5, y_test5 = train_test_split(X,</span><br><span class="line">                                                       y,</span><br><span class="line">                                                       test_size = <span class="number">0.33</span>,</span><br><span class="line">                                                       random_state = <span class="number">42</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Standardization/Normalization</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandarScaler</span><br><span class="line">scaler = StandardScaler().fit(X_train2)</span><br><span class="line">standardized_X = scaler.transform(X_train2)</span><br><span class="line">standardized_X_test = scaler.transform(X_test2)</span><br></pre></td></tr></table></figure>
+
+<h3 id="模型构建"><a href="#模型构建" class="headerlink" title="模型构建"></a>模型构建</h3><p><strong>Sequential Model</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.models <span class="keyword">import</span> Sequential</span><br><span class="line">model = Sequential()</span><br><span class="line">model2 = Sequential()</span><br><span class="line">model3 = Sequential()</span><br></pre></td></tr></table></figure>
+
+<p><strong>Multilayer</strong> <strong>Perceptron</strong>(<strong>MLP</strong>)</p>
+<p>Binary Classification</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.layers <span class="keyword">import</span> Dense</span><br><span class="line">model.add(Dense(<span class="number">12</span>,</span><br><span class="line">               input_dim = <span class="number">8</span>,</span><br><span class="line">               kernal_initializer = <span class="string">'uniform'</span>,</span><br><span class="line">               activation = <span class="string">'relu'</span>))</span><br><span class="line">model.add(Dense(<span class="number">8</span>, kernel_initializer = <span class="string">'uniform'</span>, activation = <span class="string">'relu'</span>))</span><br><span class="line">model.add(Dense(<span class="number">1</span>, kernel_initializer = <span class="string">'uniform'</span>, activation = <span class="string">'sigmod'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Multi-Class Classification</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.layers <span class="keyword">import</span> Dropout</span><br><span class="line">model.add(Dense(<span class="number">512</span>, activation = <span class="string">'relu'</span>, input_shape = (<span class="number">784</span>, )))</span><br><span class="line">model.add(Dropout(<span class="number">0.2</span>))</span><br><span class="line">model.add(Dense(<span class="number">512</span>, activation = <span class="string">'relu'</span>))</span><br><span class="line">model.add(Dropout(<span class="number">0.2</span>))</span><br><span class="line">model.add(Dense(<span class="number">10</span>, activation = <span class="string">'softmax'</span>))</span><br></pre></td></tr></table></figure>
+
+<p>Regression</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model.add(Dense(<span class="number">64</span>, activation = <span class="string">'relu'</span>, input_dim = train_data.shape[<span class="number">1</span>]))</span><br><span class="line">model.add(Dense(<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+
+<p><strong>Convolution Neural Network(CNN)</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.layers <span class="keyword">import</span> Activation, Conv2D, MaxPooling2D, Flateen</span><br><span class="line">model2.add(Conv2D(<span class="number">32</span>, (<span class="number">3</span>, <span class="number">3</span>), padding = <span class="string">'same'</span>, input_shape = x_train.shape[<span class="number">1</span>:]))</span><br><span class="line">model2.add(Activation(<span class="string">'relu'</span>))</span><br><span class="line">model2.add(Conv2D(<span class="number">32</span>, (<span class="number">3</span>,<span class="number">3</span>)))</span><br><span class="line">model2.add(Activation(<span class="string">'relu'</span>))</span><br><span class="line">model2.add(MaxPooling2D(pool_size = (<span class="number">2</span>,<span class="number">2</span>)))</span><br><span class="line">model2.add(Conv2D(<span class="number">64</span>, (<span class="number">3</span>, <span class="number">3</span>), padding = <span class="string">'same'</span>))</span><br><span class="line">model2.add(Activation(<span class="string">'relu'</span>))</span><br><span class="line">model2.add(MaxPooling2D(pool_size = (<span class="number">2</span>, <span class="number">2</span>)))</span><br><span class="line">model2.add(Dropout(<span class="number">0.25</span>))</span><br><span class="line">model2.add(Flatten())</span><br><span class="line">model2.add(Dense(<span class="number">512</span>))</span><br><span class="line">model2.add(activation(<span class="string">'relu'</span>))</span><br><span class="line">model2.add(Dropout(<span class="number">0.5</span>))</span><br><span class="line">model2.add(Dense(num_classes))</span><br><span class="line">model2.add(Activation(<span class="string">'softmax'</span>))</span><br></pre></td></tr></table></figure>
+
+<p><strong>Recurrent NEural Network(RNN)</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.klayers <span class="keyword">import</span> Embedding, LSTM</span><br><span class="line">model3.add(Embedding(<span class="number">20000</span>, <span class="number">128</span>))</span><br><span class="line">model3.add(LSTM(<span class="number">128</span>, dropout = <span class="number">0.2</span>, recurrent_dropout = <span class="number">0.2</span>))</span><br><span class="line">model2.add(Dense(<span class="number">1</span>, activation = <span class="string">'sigmod'</span>))</span><br></pre></td></tr></table></figure>
+
+<h3 id="Inspect-Model"><a href="#Inspect-Model" class="headerlink" title="Inspect Model"></a>Inspect Model</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">model.output_shape</span><br><span class="line">model.summary()</span><br><span class="line">model.get_config()</span><br><span class="line">model.get_weights()</span><br></pre></td></tr></table></figure>
+
+<h3 id="Compile-Model"><a href="#Compile-Model" class="headerlink" title="Compile Model"></a>Compile Model</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// Binary Classification</span><br><span class="line">model.compile(optimizer = <span class="string">'adam'</span>,</span><br><span class="line">             loss = <span class="string">'binary_crossentropy'</span>,</span><br><span class="line">             metrics = [<span class="string">'accuracy'</span>])</span><br><span class="line">// Multi-Class Classification</span><br><span class="line">model.compile(optimizer = <span class="string">'rmsprop'</span>,</span><br><span class="line">             loss = <span class="string">'categorical_crossentropy'</span>,</span><br><span class="line">             metrics = [<span class="string">'accuracy'</span>])</span><br><span class="line">// Regression</span><br><span class="line">model.compile(optimizer = <span class="string">'rmsprop'</span>,</span><br><span class="line">             loss = <span class="string">'mes'</span>,</span><br><span class="line">             metrics = [<span class="string">'mae'</span>])</span><br><span class="line">// Recurrent NEural Network(RNN)</span><br><span class="line">model.compile(optimizer = <span class="string">'rmsprop'</span>,</span><br><span class="line">             loss = <span class="string">'categorical_crossentropy'</span>,</span><br><span class="line">             metrics = [<span class="string">'accuracy'</span>])</span><br></pre></td></tr></table></figure>
+
+<h3 id="Model-Training"><a href="#Model-Training" class="headerlink" title="Model Training"></a>Model Training</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">model3.fit(x_train4,</span><br><span class="line">          y_train4,</span><br><span class="line">          batch_size = <span class="number">32</span>,</span><br><span class="line">          epochs = <span class="number">15</span>,</span><br><span class="line">          verbose = <span class="number">1</span>,</span><br><span class="line">          validation_data = (x_test, y_test))</span><br></pre></td></tr></table></figure>
+
+<h3 id="Model-Training-1"><a href="#Model-Training-1" class="headerlink" title="Model Training"></a>Model Training</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">score = model3.evaluate(x_test,</span><br><span class="line">                       y_test,</span><br><span class="line">                       batch_size = <span class="number">32</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Prediction"><a href="#Prediction" class="headerlink" title="Prediction"></a>Prediction</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model3.predict(x_test4, batch_size = <span class="number">32</span>)</span><br><span class="line">model3.predict_classes(x_test, batch_size = <span class="number">32</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Save-Reload-Models"><a href="#Save-Reload-Models" class="headerlink" title="Save/Reload Models"></a>Save/Reload Models</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.models <span class="keyword">import</span> load_model</span><br><span class="line">model3.save(<span class="string">'model_file.h5'</span>)</span><br><span class="line">my_model = load_mode(<span class="string">'my_model.h5'</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Model-Fine-tuning"><a href="#Model-Fine-tuning" class="headerlink" title="Model Fine-tuning"></a>Model Fine-tuning</h3><p><strong>Optimization Parameters</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.optimizers <span class="keyword">import</span> RMSprop</span><br><span class="line">opt = RMSprop(lr = <span class="number">0.0001</span>, decay = <span class="number">1e-6</span>)</span><br><span class="line">model2.compile(loss = <span class="string">'categorical_crossentropy'</span>,</span><br><span class="line">              optimizer = opt,</span><br><span class="line">              metrices = [<span class="string">'accuracy'</span>])</span><br></pre></td></tr></table></figure>
+
+<p><strong>Early Stopping</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.callbacks <span class="keyword">import</span> EarlyStopping</span><br><span class="line">early_stopping_monitor = EarlyStopping(patience = <span class="number">2</span>)</span><br><span class="line">model3.fit(x_train4,</span><br><span class="line">          y_train4,</span><br><span class="line">          batch_size = <span class="number">32</span>,</span><br><span class="line">          epochs = <span class="number">15</span>,</span><br><span class="line">          validation_data = (x_test4, y_test4),</span><br><span class="line">          callbacks = [early_stopping_monitor])</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/Keras/" rel="tag"># Keras</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/13/集成学习/" rel="next" title="集成学习">
+                <i class="fa fa-chevron-left"></i> 集成学习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/16/串匹配算法/" rel="prev" title="串匹配算法">
+                串匹配算法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  
+  <p class="site-author-name" itemprop="name">Kong Zhenzhou</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+
+
+  <nav class="site-state motion-element">
+    
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+        
+        
+          
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span>
+        
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span>
+        
+      </div>
+    
+  </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+          
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据科学笔记"><span class="nav-number">1.</span> <span class="nav-text">数据科学笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Keras"><span class="nav-number">1.1.</span> <span class="nav-text">Keras</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Keras-1"><span class="nav-number">1.1.1.</span> <span class="nav-text">Keras</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导入数据"><span class="nav-number">1.1.2.</span> <span class="nav-text">导入数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理数据"><span class="nav-number">1.1.3.</span> <span class="nav-text">处理数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型构建"><span class="nav-number">1.1.4.</span> <span class="nav-text">模型构建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Inspect-Model"><span class="nav-number">1.1.5.</span> <span class="nav-text">Inspect Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Compile-Model"><span class="nav-number">1.1.6.</span> <span class="nav-text">Compile Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-Training"><span class="nav-number">1.1.7.</span> <span class="nav-text">Model Training</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-Training-1"><span class="nav-number">1.1.8.</span> <span class="nav-text">Model Training</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Prediction"><span class="nav-number">1.1.9.</span> <span class="nav-text">Prediction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Save-Reload-Models"><span class="nav-number">1.1.10.</span> <span class="nav-text">Save/Reload Models</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-Fine-tuning"><span class="nav-number">1.1.11.</span> <span class="nav-text">Model Fine-tuning</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kong Zhenzhou</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// GET RESPONSIVE HEIGHT PASSED FROM IFRAME
+
+window.addEventListener("message", function(e) {
+  var data = e.data;
+  if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+    var featureID = data.split(':')[1];
+    var height = data.split(':')[2];
+    $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
+  }
+}, false);
+</script>
+
+
+
+
+
+
+
+
+  
+
+</body>
+</html>
