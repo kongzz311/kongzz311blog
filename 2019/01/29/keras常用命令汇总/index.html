@@ -14,8 +14,8 @@
   
 
 
-<html class="theme-next gemini use-motion" lang>
-<head><meta name="generator" content="Hexo 3.9.0">
+<html class="theme-next gemini use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -177,7 +177,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
 
   
   
@@ -187,7 +187,7 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta">
     
@@ -290,20 +290,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/29/keras常用命令汇总/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kong Zhenzhou">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Kong Zhenzhou">
     </span>
 
@@ -367,7 +367,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/" itemprop="url" rel="index"><span itemprop="name">ML</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/ML/" itemprop="url" rel="index"><span itemprop="name">ML</span></a></span>
 
                 
                 
@@ -407,68 +407,47 @@
       
 
       
-        <p><img src="http://ww1.sinaimg.cn/large/006tNc79ly1g3hdnhgfyjj30go07374h.jpg" alt><br>使用keras能帮助你快速的构建和训练自己的深度学习模型</p>
+        <p><img src="http://ww1.sinaimg.cn/large/006tNc79ly1g3hdnhgfyjj30go07374h.jpg" alt=""><br>使用keras能帮助你快速的构建和训练自己的深度学习模型</p>
 <a id="more"></a>
 <h1 id="数据科学笔记"><a href="#数据科学笔记" class="headerlink" title="数据科学笔记"></a>数据科学笔记</h1><p>Keras is a powerful and easy-to-use deep learning library for Theano and TensorFlow that provide a high-level neural networks API to develop and evaluate deep learning models.</p>
 <h2 id="Keras"><a href="#Keras" class="headerlink" title="Keras"></a>Keras</h2><h3 id="Keras-1"><a href="#Keras-1" class="headerlink" title="Keras"></a>Keras</h3><p>一个基础例子</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> keras.models <span class="keyword">import</span> Sequential</span><br><span class="line"><span class="keyword">from</span> kers.layers <span class="keyword">import</span> Dense</span><br><span class="line">data = np.random.random((<span class="number">1000</span>, <span class="number">100</span>))</span><br><span class="line">model= Sequential()</span><br><span class="line">model.add(Dense(<span class="number">32</span>,</span><br><span class="line">               activation = <span class="string">'relu'</span>,</span><br><span class="line">               input_dim = <span class="number">100</span>))</span><br><span class="line">model.add(Dense(<span class="number">1</span>, activation = <span class="string">'sigmoid'</span>))</span><br><span class="line">model.compile(optimizer = <span class="string">'rmsprop'</span>,</span><br><span class="line">             loss = <span class="string">'binary_crossentropy'</span>,</span><br><span class="line">             metrics = [<span class="string">'accuracy'</span>])</span><br><span class="line">model.fit(data, labels, epochs = <span class="number">10</span>, batch_size = <span class="number">32</span>)</span><br><span class="line">predictions = model.predict(data)</span><br></pre></td></tr></table></figure>
-
 <h3 id="导入数据"><a href="#导入数据" class="headerlink" title="导入数据"></a>导入数据</h3><p>Your data needs to be stored as Numpy arrays or a list of Numpy arrays. Ideally, you split the data in training and test sets, for which you can also resort to the train_test_split module of sklearn.cross_validataion.</p>
 <p>Keras Data Sets</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.dataset <span class="keyword">import</span> boston_housing, ministm，cifar10, imdb</span><br><span class="line">(x_train, y_train), (x_test, y_test) = minst.load_data()</span><br><span class="line">(x_train2, y_train2), (x_test2, y_test2) = boston_housing.load_data()</span><br><span class="line">(x_train3, y_train3), (x_test3, y_test3) = cifar10.load_data()</span><br><span class="line">(x_train4, y_train4), (x_test4, y_test4) = imdb.load_data(num_words = <span class="number">20000</span>)</span><br><span class="line">num_classes = <span class="number">10</span></span><br></pre></td></tr></table></figure>
-
 <p>Other</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line">data = np.loadtext(urlopen(url, delimiter = <span class="string">","</span>))</span><br><span class="line">X = data[:, <span class="number">0</span>:<span class="number">8</span>]</span><br><span class="line">Y = data[:, <span class="number">8</span>]</span><br></pre></td></tr></table></figure>
-
 <h3 id="处理数据"><a href="#处理数据" class="headerlink" title="处理数据"></a>处理数据</h3><p>Sequence Padding</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.processing <span class="keyword">import</span> sequence</span><br><span class="line">x_train4 = sequence.pad_sequences(x_train4, maxlen = <span class="number">80</span>)</span><br><span class="line">x_test4 = sequence.pad_sequences(x_test4, maxlen = <span class="number">80</span>)</span><br></pre></td></tr></table></figure>
-
 <p>One-Hot Encoding</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.utils <span class="keyword">import</span> to_categorical</span><br><span class="line">Y_train = to_categorical(y_train, num_classes)</span><br><span class="line">Y_test = to_categorical(y_test, num_classes)</span><br><span class="line">Y_train3 = to_categorical(y_train3, num_classes)</span><br><span class="line">Y_test3 = to_categorical(y_test3, num_classes)</span><br></pre></td></tr></table></figure>
-
 <p>Train and test Setssd</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line">X_train5, X_test4, y_train5, y_test5 = train_test_split(X,</span><br><span class="line">                                                       y,</span><br><span class="line">                                                       test_size = <span class="number">0.33</span>,</span><br><span class="line">                                                       random_state = <span class="number">42</span>)</span><br></pre></td></tr></table></figure>
-
 <p>Standardization/Normalization</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandarScaler</span><br><span class="line">scaler = StandardScaler().fit(X_train2)</span><br><span class="line">standardized_X = scaler.transform(X_train2)</span><br><span class="line">standardized_X_test = scaler.transform(X_test2)</span><br></pre></td></tr></table></figure>
-
 <h3 id="模型构建"><a href="#模型构建" class="headerlink" title="模型构建"></a>模型构建</h3><p><strong>Sequential Model</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.models <span class="keyword">import</span> Sequential</span><br><span class="line">model = Sequential()</span><br><span class="line">model2 = Sequential()</span><br><span class="line">model3 = Sequential()</span><br></pre></td></tr></table></figure>
-
 <p><strong>Multilayer</strong> <strong>Perceptron</strong>(<strong>MLP</strong>)</p>
 <p>Binary Classification</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.layers <span class="keyword">import</span> Dense</span><br><span class="line">model.add(Dense(<span class="number">12</span>,</span><br><span class="line">               input_dim = <span class="number">8</span>,</span><br><span class="line">               kernal_initializer = <span class="string">'uniform'</span>,</span><br><span class="line">               activation = <span class="string">'relu'</span>))</span><br><span class="line">model.add(Dense(<span class="number">8</span>, kernel_initializer = <span class="string">'uniform'</span>, activation = <span class="string">'relu'</span>))</span><br><span class="line">model.add(Dense(<span class="number">1</span>, kernel_initializer = <span class="string">'uniform'</span>, activation = <span class="string">'sigmod'</span>)</span><br></pre></td></tr></table></figure>
-
 <p>Multi-Class Classification</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.layers <span class="keyword">import</span> Dropout</span><br><span class="line">model.add(Dense(<span class="number">512</span>, activation = <span class="string">'relu'</span>, input_shape = (<span class="number">784</span>, )))</span><br><span class="line">model.add(Dropout(<span class="number">0.2</span>))</span><br><span class="line">model.add(Dense(<span class="number">512</span>, activation = <span class="string">'relu'</span>))</span><br><span class="line">model.add(Dropout(<span class="number">0.2</span>))</span><br><span class="line">model.add(Dense(<span class="number">10</span>, activation = <span class="string">'softmax'</span>))</span><br></pre></td></tr></table></figure>
-
 <p>Regression</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model.add(Dense(<span class="number">64</span>, activation = <span class="string">'relu'</span>, input_dim = train_data.shape[<span class="number">1</span>]))</span><br><span class="line">model.add(Dense(<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
-
 <p><strong>Convolution Neural Network(CNN)</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.layers <span class="keyword">import</span> Activation, Conv2D, MaxPooling2D, Flateen</span><br><span class="line">model2.add(Conv2D(<span class="number">32</span>, (<span class="number">3</span>, <span class="number">3</span>), padding = <span class="string">'same'</span>, input_shape = x_train.shape[<span class="number">1</span>:]))</span><br><span class="line">model2.add(Activation(<span class="string">'relu'</span>))</span><br><span class="line">model2.add(Conv2D(<span class="number">32</span>, (<span class="number">3</span>,<span class="number">3</span>)))</span><br><span class="line">model2.add(Activation(<span class="string">'relu'</span>))</span><br><span class="line">model2.add(MaxPooling2D(pool_size = (<span class="number">2</span>,<span class="number">2</span>)))</span><br><span class="line">model2.add(Conv2D(<span class="number">64</span>, (<span class="number">3</span>, <span class="number">3</span>), padding = <span class="string">'same'</span>))</span><br><span class="line">model2.add(Activation(<span class="string">'relu'</span>))</span><br><span class="line">model2.add(MaxPooling2D(pool_size = (<span class="number">2</span>, <span class="number">2</span>)))</span><br><span class="line">model2.add(Dropout(<span class="number">0.25</span>))</span><br><span class="line">model2.add(Flatten())</span><br><span class="line">model2.add(Dense(<span class="number">512</span>))</span><br><span class="line">model2.add(activation(<span class="string">'relu'</span>))</span><br><span class="line">model2.add(Dropout(<span class="number">0.5</span>))</span><br><span class="line">model2.add(Dense(num_classes))</span><br><span class="line">model2.add(Activation(<span class="string">'softmax'</span>))</span><br></pre></td></tr></table></figure>
-
 <p><strong>Recurrent NEural Network(RNN)</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.klayers <span class="keyword">import</span> Embedding, LSTM</span><br><span class="line">model3.add(Embedding(<span class="number">20000</span>, <span class="number">128</span>))</span><br><span class="line">model3.add(LSTM(<span class="number">128</span>, dropout = <span class="number">0.2</span>, recurrent_dropout = <span class="number">0.2</span>))</span><br><span class="line">model2.add(Dense(<span class="number">1</span>, activation = <span class="string">'sigmod'</span>))</span><br></pre></td></tr></table></figure>
-
 <h3 id="Inspect-Model"><a href="#Inspect-Model" class="headerlink" title="Inspect Model"></a>Inspect Model</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">model.output_shape</span><br><span class="line">model.summary()</span><br><span class="line">model.get_config()</span><br><span class="line">model.get_weights()</span><br></pre></td></tr></table></figure>
-
 <h3 id="Compile-Model"><a href="#Compile-Model" class="headerlink" title="Compile Model"></a>Compile Model</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// Binary Classification</span><br><span class="line">model.compile(optimizer = <span class="string">'adam'</span>,</span><br><span class="line">             loss = <span class="string">'binary_crossentropy'</span>,</span><br><span class="line">             metrics = [<span class="string">'accuracy'</span>])</span><br><span class="line">// Multi-Class Classification</span><br><span class="line">model.compile(optimizer = <span class="string">'rmsprop'</span>,</span><br><span class="line">             loss = <span class="string">'categorical_crossentropy'</span>,</span><br><span class="line">             metrics = [<span class="string">'accuracy'</span>])</span><br><span class="line">// Regression</span><br><span class="line">model.compile(optimizer = <span class="string">'rmsprop'</span>,</span><br><span class="line">             loss = <span class="string">'mes'</span>,</span><br><span class="line">             metrics = [<span class="string">'mae'</span>])</span><br><span class="line">// Recurrent NEural Network(RNN)</span><br><span class="line">model.compile(optimizer = <span class="string">'rmsprop'</span>,</span><br><span class="line">             loss = <span class="string">'categorical_crossentropy'</span>,</span><br><span class="line">             metrics = [<span class="string">'accuracy'</span>])</span><br></pre></td></tr></table></figure>
-
 <h3 id="Model-Training"><a href="#Model-Training" class="headerlink" title="Model Training"></a>Model Training</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">model3.fit(x_train4,</span><br><span class="line">          y_train4,</span><br><span class="line">          batch_size = <span class="number">32</span>,</span><br><span class="line">          epochs = <span class="number">15</span>,</span><br><span class="line">          verbose = <span class="number">1</span>,</span><br><span class="line">          validation_data = (x_test, y_test))</span><br></pre></td></tr></table></figure>
-
 <h3 id="Model-Training-1"><a href="#Model-Training-1" class="headerlink" title="Model Training"></a>Model Training</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">score = model3.evaluate(x_test,</span><br><span class="line">                       y_test,</span><br><span class="line">                       batch_size = <span class="number">32</span>)</span><br></pre></td></tr></table></figure>
-
 <h3 id="Prediction"><a href="#Prediction" class="headerlink" title="Prediction"></a>Prediction</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model3.predict(x_test4, batch_size = <span class="number">32</span>)</span><br><span class="line">model3.predict_classes(x_test, batch_size = <span class="number">32</span>)</span><br></pre></td></tr></table></figure>
-
 <h3 id="Save-Reload-Models"><a href="#Save-Reload-Models" class="headerlink" title="Save/Reload Models"></a>Save/Reload Models</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.models <span class="keyword">import</span> load_model</span><br><span class="line">model3.save(<span class="string">'model_file.h5'</span>)</span><br><span class="line">my_model = load_mode(<span class="string">'my_model.h5'</span>)</span><br></pre></td></tr></table></figure>
-
 <h3 id="Model-Fine-tuning"><a href="#Model-Fine-tuning" class="headerlink" title="Model Fine-tuning"></a>Model Fine-tuning</h3><p><strong>Optimization Parameters</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.optimizers <span class="keyword">import</span> RMSprop</span><br><span class="line">opt = RMSprop(lr = <span class="number">0.0001</span>, decay = <span class="number">1e-6</span>)</span><br><span class="line">model2.compile(loss = <span class="string">'categorical_crossentropy'</span>,</span><br><span class="line">              optimizer = opt,</span><br><span class="line">              metrices = [<span class="string">'accuracy'</span>])</span><br></pre></td></tr></table></figure>
-
 <p><strong>Early Stopping</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.callbacks <span class="keyword">import</span> EarlyStopping</span><br><span class="line">early_stopping_monitor = EarlyStopping(patience = <span class="number">2</span>)</span><br><span class="line">model3.fit(x_train4,</span><br><span class="line">          y_train4,</span><br><span class="line">          batch_size = <span class="number">32</span>,</span><br><span class="line">          epochs = <span class="number">15</span>,</span><br><span class="line">          validation_data = (x_test4, y_test4),</span><br><span class="line">          callbacks = [early_stopping_monitor])</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -581,7 +560,7 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
   
   <p class="site-author-name" itemprop="name">Kong Zhenzhou</p>
   <div class="site-description motion-element" itemprop="description"></div>
@@ -702,7 +681,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
 
 
 

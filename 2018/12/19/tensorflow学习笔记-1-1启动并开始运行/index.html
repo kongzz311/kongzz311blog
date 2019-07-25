@@ -14,8 +14,8 @@
   
 
 
-<html class="theme-next gemini use-motion" lang>
-<head><meta name="generator" content="Hexo 3.9.0">
+<html class="theme-next gemini use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -174,7 +174,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
 
   
   
@@ -184,7 +184,7 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta">
     
@@ -287,20 +287,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/19/tensorflow学习笔记-1-1启动并开始运行/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kong Zhenzhou">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Kong Zhenzhou">
     </span>
 
@@ -380,46 +380,42 @@
 
       
         <img src="/2018/12/19/tensorflow学习笔记-1-1启动并开始运行/tf.jpg">
-
 <a id="more"></a>
 <h1 id="创建第一个图谱，然后运行它"><a href="#创建第一个图谱，然后运行它" class="headerlink" title="创建第一个图谱，然后运行它"></a>创建第一个图谱，然后运行它</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x = tf.Variable(<span class="number">3</span>, name = <span class="string">'x'</span>)</span><br><span class="line">y = tf.Variable(<span class="number">4</span>, name = <span class="string">'y'</span>)</span><br><span class="line">f = x*x*x + y + <span class="number">2</span></span><br></pre></td></tr></table></figure>
-
 <p>这个代码实际上并不执行任何计算,它只是创建一个计算图谱。 事实上，变量都没有初始化.要求出此图，您需要打开一个TensorFlow 会话并使用它初始化变量并求出f</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># way 1</span></span><br><span class="line">sess = tf.Session()</span><br><span class="line">sess.run(x.initializer)</span><br><span class="line">sess.run(y.initializer)</span><br><span class="line">result = sess.run(f)</span><br><span class="line"></span><br><span class="line">print(result)</span><br><span class="line">sess.close()</span><br></pre></td></tr></table></figure>
-
-<pre><code>33</code></pre><p>不得不每次重复sess.run() 有点麻烦，但幸运的是有一个更好的方法：</p>
+<pre><code>33
+</code></pre><p>不得不每次重复sess.run() 有点麻烦，但幸运的是有一个更好的方法：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># way2</span></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    x.initializer.run()</span><br><span class="line">    y.initializer.run()</span><br><span class="line">    result = f.eval()</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
-
-<pre><code>33</code></pre><p>在with块中，会话被设置为默认会话。 调用<code>x.initializer.run()</code>等效于调用<code>tf.get_default_session().run(x.initial)</code>，<code>f.eval()</code>等效于调用<code>tf.get_default_session().run(f)</code>。 这使得代码更容易阅读。 此外，会话在块的末尾自动关闭。</p>
+<pre><code>33
+</code></pre><p>在with块中，会话被设置为默认会话。 调用<code>x.initializer.run()</code>等效于调用<code>tf.get_default_session().run(x.initial)</code>，<code>f.eval()</code>等效于调用<code>tf.get_default_session().run(f)</code>。 这使得代码更容易阅读。 此外，会话在块的末尾自动关闭。</p>
 <p>你可以使用<code>global_variables_initializer()</code> 函数，而不是手动初始化每个变量。 请注意，它实际上没有立即执行初始化，而是在图谱中创建一个当程序运行时所有变量都会初始化的节点：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># way3</span></span><br><span class="line">init = tf.global_variables_initializer()</span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    init.run()</span><br><span class="line">    result = f.eval()</span><br><span class="line">    print(result)</span><br></pre></td></tr></table></figure>
-
-<pre><code>33</code></pre><p>在 Jupyter 内部或在 Python shell 中，您可能更喜欢创建一个InteractiveSession。 与常规会话的唯一区别是，当创建InteractiveSession时，它将自动将其自身设置为默认会话，因此您不需要使用模块（但是您需要在完成后手动关闭会话）：</p>
+<pre><code>33
+</code></pre><p>在 Jupyter 内部或在 Python shell 中，您可能更喜欢创建一个InteractiveSession。 与常规会话的唯一区别是，当创建InteractiveSession时，它将自动将其自身设置为默认会话，因此您不需要使用模块（但是您需要在完成后手动关闭会话）：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># way4</span></span><br><span class="line">init = tf.global_variables_initializer()</span><br><span class="line">sess = tf.InteractiveSession()</span><br><span class="line">init.run()</span><br><span class="line">result = f.eval()</span><br><span class="line">print(result)</span><br><span class="line">sess.close()</span><br></pre></td></tr></table></figure>
-
-<pre><code>33</code></pre><p>TensorFlow 程序通常分为两部分：第一部分构建计算图谱（这称为构造阶段），第二部分运行它（这是执行阶段）。 建设阶段通常构建一个表示 ML 模型的计算图谱,然后对其进行训练,计算。 执行阶段通常运行循环，重复地求出训练步骤（例如，每个小批次），逐渐改进模型参数。</p>
+<pre><code>33
+</code></pre><p>TensorFlow 程序通常分为两部分：第一部分构建计算图谱（这称为构造阶段），第二部分运行它（这是执行阶段）。 建设阶段通常构建一个表示 ML 模型的计算图谱,然后对其进行训练,计算。 执行阶段通常运行循环，重复地求出训练步骤（例如，每个小批次），逐渐改进模型参数。</p>
 <h1 id="管理图谱"><a href="#管理图谱" class="headerlink" title="管理图谱"></a>管理图谱</h1><p>您创建的任何节点都会自动添加到默认图形中：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x1 = tf.Variable(<span class="number">1</span>)</span><br><span class="line">x1.graph <span class="keyword">is</span> tf.get_default_graph()</span><br></pre></td></tr></table></figure>
-
-<pre><code>True</code></pre><p>在大多数情况下，这是很好的，但有时您可能需要管理多个独立图形。 您可以通过创建一个新的图形并暂时将其设置为一个块中的默认图形，如下所示：</p>
+<pre><code>True
+</code></pre><p>在大多数情况下，这是很好的，但有时您可能需要管理多个独立图形。 您可以通过创建一个新的图形并暂时将其设置为一个块中的默认图形，如下所示：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph = tf.Graph()</span><br><span class="line"><span class="keyword">with</span> graph.as_default():</span><br><span class="line">    x2 = tf.Variable(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x2.graph <span class="keyword">is</span> graph</span><br></pre></td></tr></table></figure>
-
-<pre><code>True</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x2.graph <span class="keyword">is</span> tf.get_default_graph()</span><br></pre></td></tr></table></figure>
-
-<pre><code>False</code></pre><p>在 Jupyter（或 Python shell）中，通常在实验时多次运行相同的命令。 因此，您可能会收到包含许多重复节点的默认图形。 一个解决方案是重新启动 Jupyter 内核（或 Python shell），但是一个更方便的解决方案是通过运行tf.reset_default_graph()来重置默认图。</p>
+<pre><code>True
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x2.graph <span class="keyword">is</span> tf.get_default_graph()</span><br></pre></td></tr></table></figure>
+<pre><code>False
+</code></pre><p>在 Jupyter（或 Python shell）中，通常在实验时多次运行相同的命令。 因此，您可能会收到包含许多重复节点的默认图形。 一个解决方案是重新启动 Jupyter 内核（或 Python shell），但是一个更方便的解决方案是通过运行tf.reset_default_graph()来重置默认图。</p>
 <h1 id="节点值的生命周期"><a href="#节点值的生命周期" class="headerlink" title="节点值的生命周期"></a>节点值的生命周期</h1><p>求出节点时，TensorFlow 会自动确定所依赖的节点集，并首先求出这些节点。 例如，考虑以下代码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">w = tf.constant(<span class="number">3</span>)  </span><br><span class="line">x = w + <span class="number">2</span>  </span><br><span class="line">y = x + <span class="number">5</span>  </span><br><span class="line">z = x * <span class="number">3</span>  </span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:  </span><br><span class="line">    print(y.eval())  </span><br><span class="line">    print(z.eval())</span><br></pre></td></tr></table></figure>
-
 <pre><code>10
-15</code></pre><p>首先，这个代码定义了一个非常简单的图。然后，它启动一个会话并运行图来求出y：TensorFlow 自动检测到y取决于x，它取决于w，所以它首先求出w，然后x，然后y，并返回y的值。最后，代码运行图来求出z。同样，TensorFlow 检测到它必须首先求出w和x。重要的是要注意，它不会复用以前的w和x的求出结果。简而言之，前面的代码求出w和x两次。 所有节点值都在图运行之间删除，除了变量值，由会话跨图形运行维护（队列和读者也保持一些状态）。变量在其初始化程序运行时启动其生命周期，并且在会话关闭时结束。 如果要有效地求出y和z，而不像之前的代码那样求出w和x两次，那么您必须要求 TensorFlow 在一个图形运行中求出y和z，如下面的代码所示：</p>
+15
+</code></pre><p>首先，这个代码定义了一个非常简单的图。然后，它启动一个会话并运行图来求出y：TensorFlow 自动检测到y取决于x，它取决于w，所以它首先求出w，然后x，然后y，并返回y的值。最后，代码运行图来求出z。同样，TensorFlow 检测到它必须首先求出w和x。重要的是要注意，它不会复用以前的w和x的求出结果。简而言之，前面的代码求出w和x两次。 所有节点值都在图运行之间删除，除了变量值，由会话跨图形运行维护（队列和读者也保持一些状态）。变量在其初始化程序运行时启动其生命周期，并且在会话关闭时结束。 如果要有效地求出y和z，而不像之前的代码那样求出w和x两次，那么您必须要求 TensorFlow 在一个图形运行中求出y和z，如下面的代码所示：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:  </span><br><span class="line">    y_val, z_val = sess.run([y, z])  </span><br><span class="line">    print(y_val) <span class="comment"># 10  </span></span><br><span class="line">    print(z_val) <span class="comment"># 15</span></span><br></pre></td></tr></table></figure>
-
 <pre><code>10
-15</code></pre>
+15
+</code></pre>
       
     </div>
 
@@ -531,7 +527,7 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
   
   <p class="site-author-name" itemprop="name">Kong Zhenzhou</p>
   <div class="site-description motion-element" itemprop="description"></div>
@@ -652,7 +648,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
 
 
 

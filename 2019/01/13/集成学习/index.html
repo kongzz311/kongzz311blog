@@ -14,8 +14,8 @@
   
 
 
-<html class="theme-next gemini use-motion" lang>
-<head><meta name="generator" content="Hexo 3.9.0">
+<html class="theme-next gemini use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -181,7 +181,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
 
   
   
@@ -191,7 +191,7 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta">
     
@@ -294,20 +294,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/13/集成学习/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kong Zhenzhou">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Kong Zhenzhou">
     </span>
 
@@ -455,7 +455,6 @@
 <li>使用大约 2/3 的原始数据（why⬇️）</li>
 </ul>
 <img src="/2019/01/13/集成学习/4.png">
-
 <ul>
 <li>Majority Voting</li>
 <li>Number of Varibles<ul>
@@ -506,8 +505,6 @@
 <p>Bagging aims at reducing <strong>variance</strong>, not <strong>bias</strong>.</p>
 <p>In Boosting, classifiers are generated <strong>sequentially</strong>. Focuses on most informative data points. Training samples are <strong>weighted</strong>. Outputs are combined via <strong>weighted</strong> voting. Can create arbitrarily <strong>strong</strong> classifiers. The base learners can be arbitraily <strong>weak</strong>(比瞎猜好就可以). As long as they are better than random forests</p>
 <h2 id="AdaBoost"><a href="#AdaBoost" class="headerlink" title="AdaBoost"></a>AdaBoost</h2><img src="/2019/01/13/集成学习/1.png">
-
-
 <p><strong>它的自适应在于：前一个基本分类器分错的样本会得到加强，加权后的全体样本再次被用来训练下一个基本分类器。同时，在每一轮中加入一个新的弱分类器，直到达到某个预定的足够小的错误率或达到预先指定的最大迭代次数。可以认为是一种模型为加法模型、损失函数为指数函数、学习算法为前向分步算法的而分类学习方法</strong></p>
 <p>可证明的结论：</p>
 <ol>
@@ -527,7 +524,6 @@
 <li>依赖于弱分类器的选择</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># AdaBoost Algorithm</span></span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> AdaBoostClassifier</span><br><span class="line">clf = AdaBoostClassifier()</span><br><span class="line"><span class="comment"># n_estimators = 50 (default value)</span></span><br><span class="line"><span class="comment"># base_estimator = DecisionTreeClassifier (default value)</span></span><br><span class="line">clf.fit(x_train,y_train)</span><br><span class="line">clf.predict(x_test)</span><br></pre></td></tr></table></figure>
-
 <h2 id="RegionBoost"><a href="#RegionBoost" class="headerlink" title="RegionBoost"></a>RegionBoost</h2><p>动态调整权重（1998）</p>
 <p>计算</p>
 <ul>
@@ -535,14 +531,10 @@
 <li>计算正确率</li>
 </ul>
 <img src="/2019/01/13/集成学习/2.png">
-
-
 <h2 id="GBDT-Gradient-Boost-Decision-Tree"><a href="#GBDT-Gradient-Boost-Decision-Tree" class="headerlink" title="GBDT(Gradient Boost Decision Tree)"></a>GBDT(Gradient Boost Decision Tree)</h2><p>与AdaBoost不同，<strong>GBDT每一次的计算是都为了减少上一次的残差，进而在残差减少（负梯度）的方向上建立一个新的模型。</strong>GBDT与Adboost最主要的区别在于两者如何识别模型的问题。Adaboost用错分数据点来识别问题，通过调整错分数据点的权重来改进模型。GBDT通过负梯度来识别问题，通过计算负梯度来改进模型。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Gradient Boosting</span></span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> GradientBoostingClassifier</span><br><span class="line">clf = GradientBoostingClassifier()</span><br><span class="line"><span class="comment"># n_estimators = 100 (default)</span></span><br><span class="line"><span class="comment"># loss function = deviance(default) used in Logistic Regression</span></span><br><span class="line">clf.fit(x_train,y_train)</span><br><span class="line">clf.predict(x_test)</span><br></pre></td></tr></table></figure>
-
 <h2 id="XGBoost"><a href="#XGBoost" class="headerlink" title="XGBoost"></a>XGBoost</h2><p>GBDT算法只利用了一阶的导数信息，xgboost对损失函数做了二阶的泰勒展开，并在目标函数之外加入了正则项对整体求最优解，用以权衡目标函数的下降和模型的复杂程度，避免过拟合。所以不考虑细节方面，两者最大的不同就是目标函数的定义。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> xgboost <span class="keyword">as</span> xgb</span><br><span class="line"><span class="comment"># read in data</span></span><br><span class="line">dtrain = xgb.DMatrix(<span class="string">'demo/data/agaricus.txt.train'</span>)</span><br><span class="line">dtest = xgb.DMatrix(<span class="string">'demo/data/agaricus.txt.test'</span>)</span><br><span class="line"><span class="comment"># specify parameters via map</span></span><br><span class="line">param = &#123;<span class="string">'max_depth'</span>:<span class="number">2</span>, <span class="string">'eta'</span>:<span class="number">1</span>, <span class="string">'silent'</span>:<span class="number">1</span>, <span class="string">'objective'</span>:<span class="string">'binary:logistic'</span> &#125;</span><br><span class="line">num_round = <span class="number">2</span></span><br><span class="line">bst = xgb.train(param, dtrain, num_round)</span><br><span class="line"><span class="comment"># make prediction</span></span><br><span class="line">preds = bst.predict(dtest)</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -655,7 +647,7 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
   
   <p class="site-author-name" itemprop="name">Kong Zhenzhou</p>
   <div class="site-description motion-element" itemprop="description"></div>
@@ -776,7 +768,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
 
 
 
