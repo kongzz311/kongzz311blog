@@ -102,16 +102,16 @@
 <meta property="og:site_name" content="Kong Zhenzhou">
 <meta property="og:description" content="GitHub https://github.com/kongzz311/MachineLearningNotes 假如有帮助欢迎加星 水平有限，若有错误欢迎指出：kozenzei@outlook.com">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/.com//01/13/集成学习/5.png">
-<meta property="og:image" content="http://yoursite.com/.com//01/13/集成学习/4.png">
-<meta property="og:image" content="http://yoursite.com/.com//01/13/集成学习/3.png">
-<meta property="og:image" content="http://yoursite.com/.com//01/13/集成学习/1.png">
-<meta property="og:image" content="http://yoursite.com/.com//01/13/集成学习/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/01/13/集成学习/5.png">
+<meta property="og:image" content="http://yoursite.com/2019/01/13/集成学习/4.png">
+<meta property="og:image" content="http://yoursite.com/2019/01/13/集成学习/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/01/13/集成学习/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/01/13/集成学习/2.png">
 <meta property="og:updated_time" content="2019-01-12T16:52:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="集成学习">
 <meta name="twitter:description" content="GitHub https://github.com/kongzz311/MachineLearningNotes 假如有帮助欢迎加星 水平有限，若有错误欢迎指出：kozenzei@outlook.com">
-<meta name="twitter:image" content="http://yoursite.com/.com//01/13/集成学习/5.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/01/13/集成学习/5.png">
 
 
 
@@ -386,7 +386,7 @@
       
 
       
-        <img src="/.com//01/13/集成学习/5.png">
+        <img src="/2019/01/13/集成学习/5.png">
 <p>GitHub <a href="https://github.com/kongzz311/MachineLearningNotes" target="_blank" rel="noopener">https://github.com/kongzz311/MachineLearningNotes</a></p>
 <p>假如有帮助欢迎加星</p>
 <p>水平有限，若有错误欢迎指出：<a href="mailto:kozenzei@outlook.com" target="_blank" rel="noopener">kozenzei@outlook.com</a></p>
@@ -454,11 +454,11 @@
 <li>有放回的采样(Resample with Replacement)</li>
 <li>使用大约 2/3 的原始数据（why⬇️）</li>
 </ul>
-<img src="/.com//01/13/集成学习/4.png">
+<img src="/2019/01/13/集成学习/4.png">
 <ul>
 <li>Majority Voting</li>
 <li>Number of Varibles<ul>
-<li>k = available variables<img src="/.com//01/13/集成学习/3.png"></li>
+<li>k = available variables<img src="/2019/01/13/集成学习/3.png"></li>
 </ul>
 </li>
 <li>Number of Trees<ul>
@@ -504,7 +504,7 @@
 <p>Boosting 和 bagging 的区别</p>
 <p>Bagging aims at reducing <strong>variance</strong>, not <strong>bias</strong>.</p>
 <p>In Boosting, classifiers are generated <strong>sequentially</strong>. Focuses on most informative data points. Training samples are <strong>weighted</strong>. Outputs are combined via <strong>weighted</strong> voting. Can create arbitrarily <strong>strong</strong> classifiers. The base learners can be arbitraily <strong>weak</strong>(比瞎猜好就可以). As long as they are better than random forests</p>
-<h2 id="AdaBoost"><a href="#AdaBoost" class="headerlink" title="AdaBoost"></a>AdaBoost</h2><img src="/.com//01/13/集成学习/1.png">
+<h2 id="AdaBoost"><a href="#AdaBoost" class="headerlink" title="AdaBoost"></a>AdaBoost</h2><img src="/2019/01/13/集成学习/1.png">
 <p><strong>它的自适应在于：前一个基本分类器分错的样本会得到加强，加权后的全体样本再次被用来训练下一个基本分类器。同时，在每一轮中加入一个新的弱分类器，直到达到某个预定的足够小的错误率或达到预先指定的最大迭代次数。可以认为是一种模型为加法模型、损失函数为指数函数、学习算法为前向分步算法的而分类学习方法</strong></p>
 <p>可证明的结论：</p>
 <ol>
@@ -530,7 +530,7 @@
 <li>通过KNN</li>
 <li>计算正确率</li>
 </ul>
-<img src="/.com//01/13/集成学习/2.png">
+<img src="/2019/01/13/集成学习/2.png">
 <h2 id="GBDT-Gradient-Boost-Decision-Tree"><a href="#GBDT-Gradient-Boost-Decision-Tree" class="headerlink" title="GBDT(Gradient Boost Decision Tree)"></a>GBDT(Gradient Boost Decision Tree)</h2><p>与AdaBoost不同，<strong>GBDT每一次的计算是都为了减少上一次的残差，进而在残差减少（负梯度）的方向上建立一个新的模型。</strong>GBDT与Adboost最主要的区别在于两者如何识别模型的问题。Adaboost用错分数据点来识别问题，通过调整错分数据点的权重来改进模型。GBDT通过负梯度来识别问题，通过计算负梯度来改进模型。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Gradient Boosting</span></span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> GradientBoostingClassifier</span><br><span class="line">clf = GradientBoostingClassifier()</span><br><span class="line"><span class="comment"># n_estimators = 100 (default)</span></span><br><span class="line"><span class="comment"># loss function = deviance(default) used in Logistic Regression</span></span><br><span class="line">clf.fit(x_train,y_train)</span><br><span class="line">clf.predict(x_test)</span><br></pre></td></tr></table></figure>
 <h2 id="XGBoost"><a href="#XGBoost" class="headerlink" title="XGBoost"></a>XGBoost</h2><p>GBDT算法只利用了一阶的导数信息，xgboost对损失函数做了二阶的泰勒展开，并在目标函数之外加入了正则项对整体求最优解，用以权衡目标函数的下降和模型的复杂程度，避免过拟合。所以不考虑细节方面，两者最大的不同就是目标函数的定义。</p>

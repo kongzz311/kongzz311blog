@@ -100,11 +100,11 @@
 <meta property="og:url" content="http://yoursite.com/2018/12/19/tensorflow学习笔记-1-2手写一个线性回归/index.html">
 <meta property="og:site_name" content="Kong Zhenzhou">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/.com//12/19/tensorflow学习笔记-1-2手写一个线性回归/tf.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/12/19/tensorflow学习笔记-1-2手写一个线性回归/tf.jpg">
 <meta property="og:updated_time" content="2018-12-19T14:20:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tensorflow学习笔记_1.2手写一个线性回归">
-<meta name="twitter:image" content="http://yoursite.com/.com//12/19/tensorflow学习笔记-1-2手写一个线性回归/tf.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2018/12/19/tensorflow学习笔记-1-2手写一个线性回归/tf.jpg">
 
 
 
@@ -379,7 +379,7 @@
       
 
       
-        <img src="/.com//12/19/tensorflow学习笔记-1-2手写一个线性回归/tf.jpg">
+        <img src="/2018/12/19/tensorflow学习笔记-1-2手写一个线性回归/tf.jpg">
 <a id="more"></a>
 <p>theta = (XT X)-1 XT y</p>
 <h1 id="手写一个线性回归解析解解法"><a href="#手写一个线性回归解析解解法" class="headerlink" title="手写一个线性回归解析解解法"></a>手写一个线性回归解析解解法</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> fetch_california_housing</span><br><span class="line">housing = fetch_california_housing()</span><br><span class="line">m, n = housing .data.shape</span><br><span class="line"><span class="comment">#np.c_按column来组合array</span></span><br><span class="line">housing_data_plus_bias = np.c_[np.ones((m, <span class="number">1</span>)), housing.data]</span><br><span class="line"></span><br><span class="line">X = tf.constant(housing_data_plus_bias, dtype = tf.float32, name = <span class="string">"X"</span>)</span><br><span class="line">y = tf.constant(housing.target.reshape(<span class="number">-1</span>, <span class="number">1</span>), dtype = tf.float32, name = <span class="string">"y"</span>)</span><br><span class="line">XT = tf.transpose(X)</span><br><span class="line">theta = tf.matmul(tf.matmul(tf.matrix_inverse(tf.matmul(XT, X)), XT),y)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    theta_value = theta.eval()</span><br><span class="line">print(theta_value)</span><br></pre></td></tr></table></figure>
