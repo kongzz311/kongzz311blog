@@ -168,7 +168,23 @@
   </style>
 </noscript>
 
-  <meta name="referrer" content="no-referrer">
+  <!-- <meta name="referrer" content="no-referrer"/> -->
+  <script>
+  var link = "" ;
+// 遍历所有的img标签
+$("img").each( (i,o) => {
+var o = $(o);
+  // 判断图片的链接是否包含sinaimg关键字
+if( o.attr("src").indexOf("sinaimg") > 0 ){
+      // 给这个标签加上referrerPlicy属性
+  o.attr("referrerpolicy","no-referrer");
+      // 备份图片的src
+  link = o.attr("src");
+      // 重新设置src，让页面重新加载一次图片
+  o.attr("src",link);
+}
+});
+  </script>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
@@ -350,7 +366,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-26 00:04:58" itemprop="dateModified" datetime="2019-07-26T00:04:58+08:00">2019-07-26</time>
+                <time title="Modified: 2019-07-26 18:45:04" itemprop="dateModified" datetime="2019-07-26T18:45:04+08:00">2019-07-26</time>
               </span>
             
           
@@ -2195,6 +2211,7 @@ window.addEventListener("message", function(e) {
 
 
   
+
 
 </body>
 </html>

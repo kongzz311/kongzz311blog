@@ -110,7 +110,7 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNc79ly1g5civfol5lj31480eetb9.jpg">
 <meta property="og:image" content="https://wx2.sinaimg.cn/mw690/0065n24cgy1g2vautizc4j30m70m6tag.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/006tNc79ly1g5cj3x1kbjj306o06oglq.jpg">
-<meta property="og:updated_time" content="2019-07-25T16:04:58.641Z">
+<meta property="og:updated_time" content="2019-07-26T10:45:04.343Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决hexo博客新浪图床显示失败">
 <meta name="twitter:description" content="发现图床失效对于不少自己搭建博客的人来说，图床的选择可真是一个大难点，有一些国外的访问速度又不行，国内的云存储服务商收费又比较高，还有的必须绑定认证的域名才能使用。都比较头疼。 后来纠结了好几天，最终决定使用免费的 微博图床。">
@@ -182,7 +182,23 @@
   </style>
 </noscript>
 
-  <meta name="referrer" content="no-referrer">
+  <!-- <meta name="referrer" content="no-referrer"/> -->
+  <script>
+  var link = "" ;
+// 遍历所有的img标签
+$("img").each( (i,o) => {
+var o = $(o);
+  // 判断图片的链接是否包含sinaimg关键字
+if( o.attr("src").indexOf("sinaimg") > 0 ){
+      // 给这个标签加上referrerPlicy属性
+  o.attr("referrerpolicy","no-referrer");
+      // 备份图片的src
+  link = o.attr("src");
+      // 重新设置src，让页面重新加载一次图片
+  o.attr("src",link);
+}
+});
+  </script>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
@@ -361,7 +377,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-26 00:04:58" itemprop="dateModified" datetime="2019-07-26T00:04:58+08:00">2019-07-26</time>
+                <time title="Modified: 2019-07-26 18:45:04" itemprop="dateModified" datetime="2019-07-26T18:45:04+08:00">2019-07-26</time>
               </span>
             
           
@@ -406,7 +422,7 @@
 <a id="more"></a>
 <p>之前都是神清气爽啊 只要阿里不倒 新浪就不倒 我就可以无尽地使用免费图床啦～</p>
 <p><img src="http://ww1.sinaimg.cn/large/006tNc79ly1g5ciy5k8r6g305i05it90.gif" alt=""></p>
-<p>知道我发现我外链全部挂了 一开始以为是自己的原因以为配置不对 呵呵。</p>
+<p>直到我发现我外链全部挂了 一开始以为是自己的原因以为配置不对 呵呵。</p>
 <p><img src="http://ww2.sinaimg.cn/large/006tNc79ly1g5ciz8cp8oj30bx0c2weu.jpg" alt=""></p>
 <p><img src="http://ww2.sinaimg.cn/large/006tNc79ly1g5cipql4fkj313d0u0dhz.jpg" alt=""></p>
 <p>点开html检查一下呢</p>
@@ -814,6 +830,7 @@ window.addEventListener("message", function(e) {
 
 
   
+
 
 </body>
 </html>
