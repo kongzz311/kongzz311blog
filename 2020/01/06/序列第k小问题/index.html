@@ -94,20 +94,18 @@
   };
 </script>
 
-  <meta name="keywords" content="python">
+  <meta name="description" content="给入一个输入序列求第k大的值是多少 输入值&amp;lt;100000 分治法原理同操作系统中文件管理中的顺序索引 定义table[100001]  和block[ceil(sqrt(n))] 12345678910111213141516171819202122232425262728293031#include&amp;lt;iostream&amp;gt;#include&amp;lt;vector&amp;gt;using n">
+<meta name="keywords" content="算法,数据结构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用conda管理python环境">
-<meta property="og:url" content="http://yoursite.com/2019/12/26/使用conda管理python环境/index.html">
+<meta property="og:title" content="序列第k小问题">
+<meta property="og:url" content="http://yoursite.com/2020/01/06/序列第k小问题/index.html">
 <meta property="og:site_name" content="Kong Zhenzhou">
+<meta property="og:description" content="给入一个输入序列求第k大的值是多少 输入值&amp;lt;100000 分治法原理同操作系统中文件管理中的顺序索引 定义table[100001]  和block[ceil(sqrt(n))] 12345678910111213141516171819202122232425262728293031#include&amp;lt;iostream&amp;gt;#include&amp;lt;vector&amp;gt;using n">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://i.loli.net/2019/12/26/63krNMmfV19dBDz.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/12/26/dVCAgHBy1fZemv7.png">
-<meta property="og:image" content="https://i.loli.net/2019/12/26/X9jP4ZGWQpSD7us.png">
-<meta property="og:image" content="https://i.loli.net/2019/12/26/X9jP4ZGWQpSD7us.png">
-<meta property="og:updated_time" content="2019-12-26T12:28:28.578Z">
+<meta property="og:updated_time" content="2020-01-06T15:50:42.992Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用conda管理python环境">
-<meta name="twitter:image" content="https://i.loli.net/2019/12/26/63krNMmfV19dBDz.jpg">
+<meta name="twitter:title" content="序列第k小问题">
+<meta name="twitter:description" content="给入一个输入序列求第k大的值是多少 输入值&amp;lt;100000 分治法原理同操作系统中文件管理中的顺序索引 定义table[100001]  和block[ceil(sqrt(n))] 12345678910111213141516171819202122232425262728293031#include&amp;lt;iostream&amp;gt;#include&amp;lt;vector&amp;gt;using n">
 
 
 
@@ -115,7 +113,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/12/26/使用conda管理python环境/">
+  <link rel="canonical" href="http://yoursite.com/2020/01/06/序列第k小问题/">
 
 
 
@@ -126,7 +124,7 @@
 </script>
 
   
-  <title>使用conda管理python环境 | Kong Zhenzhou</title>
+  <title>序列第k小问题 | Kong Zhenzhou</title>
   
 
 
@@ -316,7 +314,7 @@ if( o.attr("src").indexOf("sinaimg") > 0 ){
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/26/使用conda管理python环境/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/06/序列第k小问题/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kong Zhenzhou 孔镇洲">
@@ -333,7 +331,7 @@ if( o.attr("src").indexOf("sinaimg") > 0 ){
 
         
         
-          <h1 class="post-title" itemprop="name headline">使用conda管理python环境
+          <h1 class="post-title" itemprop="name headline">序列第k小问题
 
               
             
@@ -359,7 +357,7 @@ if( o.attr("src").indexOf("sinaimg") > 0 ){
                 
               
 
-              <time title="Created: 2019-12-26 19:48:52 / Modified: 20:28:28" itemprop="dateCreated datePublished" datetime="2019-12-26T19:48:52+08:00">2019-12-26</time>
+              <time title="Created: 2020-01-06 23:50:16 / Modified: 23:50:42" itemprop="dateCreated datePublished" datetime="2020-01-06T23:50:16+08:00">2020-01-06</time>
             </span>
           
 
@@ -403,20 +401,12 @@ if( o.attr("src").indexOf("sinaimg") > 0 ){
       
 
       
-        <p><img src="https://i.loli.net/2019/12/26/63krNMmfV19dBDz.jpg" alt="63krNMmfV19dBDz"><br><a id="more"></a></p>
-<p>有些东西一段时间不碰就忘记了，还是写下来比较好</p>
-<h1 id="为项目建立虚拟环境"><a href="#为项目建立虚拟环境" class="headerlink" title="为项目建立虚拟环境"></a>为项目建立虚拟环境</h1><p><code>conda search &quot;^python$&quot;</code> 可以来搜索本级可供使用的python的各个版本</p>
-<p><img src="https://i.loli.net/2019/12/26/dVCAgHBy1fZemv7.png" alt="dVCAgHBy1fZemv7" style="zoom:33%;"></p>
-<p><code>conda create -n 环境名字 python=x.x anaconda</code> 创建环境</p>
-<p>所有的包的地址在“path_to_your_anaconda_location/anaconda/envs/环境名字”</p>
-<p><img src="https://i.loli.net/2019/12/26/X9jP4ZGWQpSD7us.png" alt="X9jP4ZGWQpSD7us" style="zoom:33%;"></p>
-<h1 id="激活虚拟环境"><a href="#激活虚拟环境" class="headerlink" title="激活虚拟环境"></a>激活虚拟环境</h1><p><code>source activate 环境名字</code></p>
-<p><img src="https://i.loli.net/2019/12/26/X9jP4ZGWQpSD7us.png" alt="X9jP4ZGWQpSD7us" style="zoom:33%;"></p>
-<h1 id="给虚拟环境安装附加的python包"><a href="#给虚拟环境安装附加的python包" class="headerlink" title="给虚拟环境安装附加的python包"></a>给虚拟环境安装附加的python包</h1><p><code>conda install -n 环境名字 [package]</code></p>
-<p>比如安装keras</p>
-<h1 id="退出当前环境"><a href="#退出当前环境" class="headerlink" title="退出当前环境"></a>退出当前环境</h1><p><code>conda activate</code></p>
-<h1 id="删除不再使用的环境"><a href="#删除不再使用的环境" class="headerlink" title="删除不再使用的环境"></a>删除不再使用的环境</h1><p><code>conda remove -n 环境名字 -all</code></p>
-<h1 id="看当前所有的环境"><a href="#看当前所有的环境" class="headerlink" title="看当前所有的环境"></a>看当前所有的环境</h1><p><code>conda info -e</code></p>
+        <a id="more"></a>
+<p>给入一个输入序列求第k大的值是多少 输入值&lt;100000</p>
+<h1 id="分治法"><a href="#分治法" class="headerlink" title="分治法"></a>分治法</h1><p>原理同操作系统中文件管理中的顺序索引</p>
+<p>定义table[100001]  和block[ceil(sqrt(n))]</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">100010</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> sqrn = <span class="number">316</span>;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; block(sqrn, <span class="number">0</span>);</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; table(maxn, <span class="number">0</span>);</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">findK</span><span class="params">(<span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> sum = <span class="number">0</span>; <span class="comment">// 存放当前累计存在的数的个数</span></span><br><span class="line">  <span class="keyword">int</span> idx = <span class="number">0</span>; <span class="comment">// 块号</span></span><br><span class="line">  <span class="keyword">while</span>(sum + block[idx] &lt; k)</span><br><span class="line">    sum += block[idx++];</span><br><span class="line">  <span class="keyword">int</span> num = idx * sqrn; <span class="comment">// idx号块的第一个数</span></span><br><span class="line">  <span class="keyword">while</span>(sum + table[num] &lt; k)&#123;</span><br><span class="line">    sum += table[num++];</span><br><span class="line">  &#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; num &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> n, k;</span><br><span class="line">  <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">  <span class="built_in">cin</span> &gt;&gt; k;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">		block[x/sqrn] ++;</span><br><span class="line">    table[x] ++;</span><br><span class="line">  &#125;</span><br><span class="line">	findK(k);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="树状数组"><a href="#树状数组" class="headerlink" title="树状数组"></a>树状数组</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) ((x)&amp;(-x))</span></span><br><span class="line"><span class="keyword">int</span> maxn = <span class="number">100010</span>;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; c(maxn, <span class="number">0</span>);</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> v)</span></span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = x; i &lt; maxn; i += lowbit(i))</span><br><span class="line">    c[i] += v;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getSum</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = x; i &gt; <span class="number">0</span>; i -= lowbit(i))&#123;</span><br><span class="line">    sum += c[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findK</span><span class="params">(<span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> l = <span class="number">1</span>, r = maxn, mid;</span><br><span class="line">  <span class="keyword">while</span>(l &lt; r)&#123;</span><br><span class="line">    mid = (l + r) /<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(getSum(mid) &gt;= k) r = mid;</span><br><span class="line">    <span class="keyword">else</span> l = mid +<span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> n, k;<span class="comment">// n 一共多少输入 k 第k大</span></span><br><span class="line">  <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">  <span class="built_in">cin</span> &gt;&gt; k;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">    <span class="keyword">int</span> tmp;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; tmp;</span><br><span class="line">    update(tmp, <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; findK(k);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -447,7 +437,9 @@ if( o.attr("src").indexOf("sinaimg") > 0 ){
         
         <div class="post-tags">
           
-            <a href="/tags/python/" rel="tag"># python</a>
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
           
         </div>
       
@@ -460,8 +452,8 @@ if( o.attr("src").indexOf("sinaimg") > 0 ){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/25/解决hexo博客新浪图床显示失败/" rel="next" title="解决hexo博客新浪图床显示失败">
-                <i class="fa fa-chevron-left"></i> 解决hexo博客新浪图床显示失败
+              <a href="/2020/01/06/树状数组学习笔记/" rel="next" title="树状数组学习笔记">
+                <i class="fa fa-chevron-left"></i> 树状数组学习笔记
               </a>
             
           </div>
@@ -469,10 +461,6 @@ if( o.attr("src").indexOf("sinaimg") > 0 ){
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/12/28/VScode配置python开发环境/" rel="prev" title="VScode配置python开发环境">
-                VScode配置python开发环境 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -673,7 +661,7 @@ if( o.attr("src").indexOf("sinaimg") > 0 ){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#为项目建立虚拟环境"><span class="nav-number">1.</span> <span class="nav-text">为项目建立虚拟环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#激活虚拟环境"><span class="nav-number">2.</span> <span class="nav-text">激活虚拟环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#给虚拟环境安装附加的python包"><span class="nav-number">3.</span> <span class="nav-text">给虚拟环境安装附加的python包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#退出当前环境"><span class="nav-number">4.</span> <span class="nav-text">退出当前环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#删除不再使用的环境"><span class="nav-number">5.</span> <span class="nav-text">删除不再使用的环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#看当前所有的环境"><span class="nav-number">6.</span> <span class="nav-text">看当前所有的环境</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#分治法"><span class="nav-number">1.</span> <span class="nav-text">分治法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#树状数组"><span class="nav-number">2.</span> <span class="nav-text">树状数组</span></a></li></ol></div>
             
 
           </div>
