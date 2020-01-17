@@ -94,20 +94,17 @@
   };
 </script>
 
-  <meta name="description" content="真爱生命， 远离垃圾">
-<meta name="keywords" content="VPS">
+  <meta name="keywords" content="python,venv">
 <meta property="og:type" content="article">
-<meta property="og:title" content="罄竹难书的Rsync">
-<meta property="og:url" content="http://yoursite.com/2018/12/19/罄竹难书的Rsync/index.html">
+<meta property="og:title" content="使用python内置venv">
+<meta property="og:url" content="http://yoursite.com/2020/01/17/使用python内置venv/index.html">
 <meta property="og:site_name" content="Kong Zhenzhou">
-<meta property="og:description" content="真爱生命， 远离垃圾">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2018/12/19/罄竹难书的Rsync/angry.jpg">
-<meta property="og:updated_time" content="2018-12-19T14:20:10.000Z">
+<meta property="og:image" content="https://i.loli.net/2020/01/17/GTEmo6c52BIHZ8Q.jpg">
+<meta property="og:updated_time" content="2020-01-17T07:42:12.314Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="罄竹难书的Rsync">
-<meta name="twitter:description" content="真爱生命， 远离垃圾">
-<meta name="twitter:image" content="http://yoursite.com/2018/12/19/罄竹难书的Rsync/angry.jpg">
+<meta name="twitter:title" content="使用python内置venv">
+<meta name="twitter:image" content="https://i.loli.net/2020/01/17/GTEmo6c52BIHZ8Q.jpg">
 
 
 
@@ -115,7 +112,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2018/12/19/罄竹难书的Rsync/">
+  <link rel="canonical" href="http://yoursite.com/2020/01/17/使用python内置venv/">
 
 
 
@@ -126,7 +123,7 @@
 </script>
 
   
-  <title>罄竹难书的Rsync | Kong Zhenzhou</title>
+  <title>使用python内置venv | Kong Zhenzhou</title>
   
 
 
@@ -316,7 +313,7 @@ if( o.attr("src").indexOf("sinaimg") > 0 ){
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/19/罄竹难书的Rsync/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/17/使用python内置venv/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kong Zhenzhou 孔镇洲">
@@ -333,7 +330,7 @@ if( o.attr("src").indexOf("sinaimg") > 0 ){
 
         
         
-          <h1 class="post-title" itemprop="name headline">罄竹难书的Rsync
+          <h1 class="post-title" itemprop="name headline">使用python内置venv
 
               
             
@@ -359,7 +356,7 @@ if( o.attr("src").indexOf("sinaimg") > 0 ){
                 
               
 
-              <time title="Created: 2018-12-19 17:14:52 / Modified: 22:20:10" itemprop="dateCreated datePublished" datetime="2018-12-19T17:14:52+08:00">2018-12-19</time>
+              <time title="Created: 2020-01-17 15:41:43 / Modified: 15:42:12" itemprop="dateCreated datePublished" datetime="2020-01-17T15:41:43+08:00">2020-01-17</time>
             </span>
           
 
@@ -403,9 +400,17 @@ if( o.attr("src").indexOf("sinaimg") > 0 ){
       
 
       
-        <h1 id="真爱生命，-远离垃圾"><a href="#真爱生命，-远离垃圾" class="headerlink" title="真爱生命， 远离垃圾"></a>真爱生命， 远离垃圾</h1><img src="/2018/12/19/罄竹难书的Rsync/angry.jpg">
+        <p><img src="https://i.loli.net/2020/01/17/GTEmo6c52BIHZ8Q.jpg" alt="GTEmo6c52BIHZ8Q"></p>
 <a id="more"></a>
-<h1 id="root账号下一切ok改成其他user就不断报错"><a href="#root账号下一切ok改成其他user就不断报错" class="headerlink" title="root账号下一切ok改成其他user就不断报错"></a>root账号下一切ok改成其他user就不断报错</h1><h1 id="各种连不上"><a href="#各种连不上" class="headerlink" title="各种连不上"></a>各种连不上</h1><h1 id="各种没有权限"><a href="#各种没有权限" class="headerlink" title="各种没有权限"></a>各种没有权限</h1><h1 id="开了防火墙又是各种连不上"><a href="#开了防火墙又是各种连不上" class="headerlink" title="开了防火墙又是各种连不上"></a>开了防火墙又是各种连不上</h1><h1 id="早知如今不如直接scp上传"><a href="#早知如今不如直接scp上传" class="headerlink" title="早知如今不如直接scp上传"></a>早知如今不如直接scp上传</h1><h1 id="特别鸡肋"><a href="#特别鸡肋" class="headerlink" title="特别鸡肋"></a>特别鸡肋</h1>
+<h1 id="Set-venv"><a href="#Set-venv" class="headerlink" title="Set venv"></a>Set venv</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// initial</span><br><span class="line">python3 -m venv project_env</span><br><span class="line"></span><br><span class="line">// activate</span><br><span class="line"><span class="built_in">source</span> project_env/bin/activate</span><br></pre></td></tr></table></figure>
+<p>to check it</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">which</span> python</span><br><span class="line">pip install something</span><br><span class="line">pip list</span><br></pre></td></tr></table></figure>
+<h1 id="Export-venv"><a href="#Export-venv" class="headerlink" title="Export venv"></a>Export venv</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pip freeze // will show packages on the screen</span><br><span class="line"></span><br><span class="line">// put output into a txt file</span><br><span class="line">pip freeze &gt; requirements.txt</span><br><span class="line"></span><br><span class="line">// check txt content</span><br><span class="line">cat requirements.txt</span><br></pre></td></tr></table></figure>
+<h1 id="Deactivate"><a href="#Deactivate" class="headerlink" title="Deactivate"></a>Deactivate</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deactivate</span><br></pre></td></tr></table></figure>
+<h1 id="Delete-venv"><a href="#Delete-venv" class="headerlink" title="Delete venv"></a>Delete venv</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf project_venv</span><br></pre></td></tr></table></figure>
+<h1 id="Import-venv"><a href="#Import-venv" class="headerlink" title="Import venv"></a>Import venv</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir myproject</span><br><span class="line">python3 -m venv myproject/venv</span><br><span class="line"><span class="built_in">source</span> myproject/venv/bin/activate</span><br><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
+<h1 id="Set-venv-with-access-to-sys-packages"><a href="#Set-venv-with-access-to-sys-packages" class="headerlink" title="Set venv with access to sys packages"></a>Set venv with access to sys packages</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">python3 -m venv venv --system-site-packages</span><br><span class="line"></span><br><span class="line">// show venv packages </span><br><span class="line">pip list --<span class="built_in">local</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -435,7 +440,9 @@ if( o.attr("src").indexOf("sinaimg") > 0 ){
         
         <div class="post-tags">
           
-            <a href="/tags/VPS/" rel="tag"># VPS</a>
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/venv/" rel="tag"># venv</a>
           
         </div>
       
@@ -448,8 +455,8 @@ if( o.attr("src").indexOf("sinaimg") > 0 ){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/19/使用Nodejs的模版步骤/" rel="next" title="使用Nodejs的模版步骤">
-                <i class="fa fa-chevron-left"></i> 使用Nodejs的模版步骤
+              <a href="/2020/01/06/序列第k小问题/" rel="next" title="序列第k小问题">
+                <i class="fa fa-chevron-left"></i> 序列第k小问题
               </a>
             
           </div>
@@ -457,10 +464,6 @@ if( o.attr("src").indexOf("sinaimg") > 0 ){
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/19/tensorflow学习笔记-1-1启动并开始运行/" rel="prev" title="tensorflow学习笔记_1.1启动并开始运行">
-                tensorflow学习笔记_1.1启动并开始运行 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -663,7 +666,7 @@ if( o.attr("src").indexOf("sinaimg") > 0 ){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#真爱生命，-远离垃圾"><span class="nav-number">1.</span> <span class="nav-text">真爱生命， 远离垃圾</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#root账号下一切ok改成其他user就不断报错"><span class="nav-number">2.</span> <span class="nav-text">root账号下一切ok改成其他user就不断报错</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#各种连不上"><span class="nav-number">3.</span> <span class="nav-text">各种连不上</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#各种没有权限"><span class="nav-number">4.</span> <span class="nav-text">各种没有权限</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开了防火墙又是各种连不上"><span class="nav-number">5.</span> <span class="nav-text">开了防火墙又是各种连不上</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#早知如今不如直接scp上传"><span class="nav-number">6.</span> <span class="nav-text">早知如今不如直接scp上传</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#特别鸡肋"><span class="nav-number">7.</span> <span class="nav-text">特别鸡肋</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Set-venv"><span class="nav-number">1.</span> <span class="nav-text">Set venv</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Export-venv"><span class="nav-number">2.</span> <span class="nav-text">Export venv</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Deactivate"><span class="nav-number">3.</span> <span class="nav-text">Deactivate</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Delete-venv"><span class="nav-number">4.</span> <span class="nav-text">Delete venv</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Import-venv"><span class="nav-number">5.</span> <span class="nav-text">Import venv</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Set-venv-with-access-to-sys-packages"><span class="nav-number">6.</span> <span class="nav-text">Set venv with access to sys packages</span></a></li></ol></div>
             
 
           </div>
