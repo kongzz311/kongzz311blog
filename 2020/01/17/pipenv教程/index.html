@@ -94,20 +94,17 @@
   };
 </script>
 
-  <meta name="keywords" content="python">
+  <meta name="keywords" content="python,pipenv">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用conda管理python环境">
-<meta property="og:url" content="http://yoursite.com/2019/12/26/使用conda管理python环境/index.html">
+<meta property="og:title" content="pipenv教程">
+<meta property="og:url" content="http://yoursite.com/2020/01/17/pipenv教程/index.html">
 <meta property="og:site_name" content="Kong Zhenzhou">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://i.loli.net/2019/12/26/63krNMmfV19dBDz.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/12/26/dVCAgHBy1fZemv7.png">
-<meta property="og:image" content="https://i.loli.net/2019/12/26/X9jP4ZGWQpSD7us.png">
-<meta property="og:image" content="https://i.loli.net/2019/12/26/X9jP4ZGWQpSD7us.png">
-<meta property="og:updated_time" content="2019-12-26T12:28:28.578Z">
+<meta property="og:image" content="https://i.loli.net/2020/01/17/HXMwdayoNu6USIE.jpg">
+<meta property="og:updated_time" content="2020-01-17T12:24:43.901Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用conda管理python环境">
-<meta name="twitter:image" content="https://i.loli.net/2019/12/26/63krNMmfV19dBDz.jpg">
+<meta name="twitter:title" content="pipenv教程">
+<meta name="twitter:image" content="https://i.loli.net/2020/01/17/HXMwdayoNu6USIE.jpg">
 
 
 
@@ -115,7 +112,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/12/26/使用conda管理python环境/">
+  <link rel="canonical" href="http://yoursite.com/2020/01/17/pipenv教程/">
 
 
 
@@ -126,7 +123,7 @@
 </script>
 
   
-  <title>使用conda管理python环境 | Kong Zhenzhou</title>
+  <title>pipenv教程 | Kong Zhenzhou</title>
   
 
 
@@ -316,7 +313,7 @@ if( o.attr("src").indexOf("sinaimg") > 0 ){
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/26/使用conda管理python环境/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/17/pipenv教程/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kong Zhenzhou 孔镇洲">
@@ -333,7 +330,7 @@ if( o.attr("src").indexOf("sinaimg") > 0 ){
 
         
         
-          <h1 class="post-title" itemprop="name headline">使用conda管理python环境
+          <h1 class="post-title" itemprop="name headline">pipenv教程
 
               
             
@@ -359,7 +356,7 @@ if( o.attr("src").indexOf("sinaimg") > 0 ){
                 
               
 
-              <time title="Created: 2019-12-26 19:48:52 / Modified: 20:28:28" itemprop="dateCreated datePublished" datetime="2019-12-26T19:48:52+08:00">2019-12-26</time>
+              <time title="Created: 2020-01-17 20:24:15 / Modified: 20:24:43" itemprop="dateCreated datePublished" datetime="2020-01-17T20:24:15+08:00">2020-01-17</time>
             </span>
           
 
@@ -403,20 +400,28 @@ if( o.attr("src").indexOf("sinaimg") > 0 ){
       
 
       
-        <p><img src="https://i.loli.net/2019/12/26/63krNMmfV19dBDz.jpg" alt="63krNMmfV19dBDz"><br><a id="more"></a></p>
-<p>有些东西一段时间不碰就忘记了，还是写下来比较好</p>
-<h1 id="为项目建立虚拟环境"><a href="#为项目建立虚拟环境" class="headerlink" title="为项目建立虚拟环境"></a>为项目建立虚拟环境</h1><p><code>conda search &quot;^python$&quot;</code> 可以来搜索本级可供使用的python的各个版本</p>
-<p><img src="https://i.loli.net/2019/12/26/dVCAgHBy1fZemv7.png" alt="dVCAgHBy1fZemv7" style="zoom:33%;"></p>
-<p><code>conda create -n 环境名字 python=x.x anaconda</code> 创建环境</p>
-<p>所有的包的地址在“path_to_your_anaconda_location/anaconda/envs/环境名字”</p>
-<p><img src="https://i.loli.net/2019/12/26/X9jP4ZGWQpSD7us.png" alt="X9jP4ZGWQpSD7us" style="zoom:33%;"></p>
-<h1 id="激活虚拟环境"><a href="#激活虚拟环境" class="headerlink" title="激活虚拟环境"></a>激活虚拟环境</h1><p><code>source activate 环境名字</code></p>
-<p><img src="https://i.loli.net/2019/12/26/X9jP4ZGWQpSD7us.png" alt="X9jP4ZGWQpSD7us" style="zoom:33%;"></p>
-<h1 id="给虚拟环境安装附加的python包"><a href="#给虚拟环境安装附加的python包" class="headerlink" title="给虚拟环境安装附加的python包"></a>给虚拟环境安装附加的python包</h1><p><code>conda install -n 环境名字 [package]</code></p>
-<p>比如安装keras</p>
-<h1 id="退出当前环境"><a href="#退出当前环境" class="headerlink" title="退出当前环境"></a>退出当前环境</h1><p><code>conda activate</code></p>
-<h1 id="删除不再使用的环境"><a href="#删除不再使用的环境" class="headerlink" title="删除不再使用的环境"></a>删除不再使用的环境</h1><p><code>conda remove -n 环境名字 -all</code></p>
-<h1 id="看当前所有的环境"><a href="#看当前所有的环境" class="headerlink" title="看当前所有的环境"></a>看当前所有的环境</h1><p><code>conda info -e</code></p>
+        <p><img src="https://i.loli.net/2020/01/17/HXMwdayoNu6USIE.jpg" alt="HXMwdayoNu6USIE"></p>
+<a id="more"></a>
+<h1 id="install-pipenv"><a href="#install-pipenv" class="headerlink" title="install pipenv"></a>install pipenv</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pipenv</span><br></pre></td></tr></table></figure>
+<h1 id="intall-packages"><a href="#intall-packages" class="headerlink" title="intall packages"></a>intall packages</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir my_project</span><br><span class="line"><span class="built_in">cd</span> my_project</span><br><span class="line">pipenv install requests</span><br></pre></td></tr></table></figure>
+<p>after that 2 file will in the directory</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── Pipfile</span><br><span class="line">└── Pipfile.lock</span><br></pre></td></tr></table></figure>
+<h1 id="Activate-env"><a href="#Activate-env" class="headerlink" title="Activate env"></a>Activate env</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pipenv shell</span><br><span class="line"></span><br><span class="line">pipenv run python</span><br><span class="line"></span><br><span class="line">pipenv run python script.py</span><br></pre></td></tr></table></figure>
+<h1 id="Deactivate"><a href="#Deactivate" class="headerlink" title="Deactivate"></a>Deactivate</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+<h1 id="requirements-txt-file"><a href="#requirements-txt-file" class="headerlink" title="requirements.txt file"></a>requirements.txt file</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv install -r requirements.txt</span><br></pre></td></tr></table></figure>
+<p>export</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv lock -r &gt; requirements.txt</span><br></pre></td></tr></table></figure>
+<h1 id="install-just-in-dev"><a href="#install-just-in-dev" class="headerlink" title="install just in dev"></a>install just in dev</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv install pytest --dev</span><br></pre></td></tr></table></figure>
+<h1 id="Uninstall"><a href="#Uninstall" class="headerlink" title="Uninstall"></a>Uninstall</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv uninstall requests</span><br></pre></td></tr></table></figure>
+<h1 id="Use-another-version-python"><a href="#Use-another-version-python" class="headerlink" title="Use another version python"></a>Use another version python</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">code Pipfile</span><br></pre></td></tr></table></figure>
+<p>edit Pipfile change python_version to another e.g. 3.6</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv --python 3.6</span><br></pre></td></tr></table></figure>
+<h1 id="Removing-venv"><a href="#Removing-venv" class="headerlink" title="Removing venv"></a>Removing venv</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv --rm</span><br></pre></td></tr></table></figure>
+<h1 id="Update-packages"><a href="#Update-packages" class="headerlink" title="Update packages"></a>Update packages</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pipenv check</span><br><span class="line"></span><br><span class="line">\\ edit Pipfile</span><br><span class="line"></span><br><span class="line">pipenv install</span><br></pre></td></tr></table></figure>
+<h1 id="Show-dependencies-graph"><a href="#Show-dependencies-graph" class="headerlink" title="Show dependencies graph"></a>Show dependencies graph</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv graph</span><br></pre></td></tr></table></figure>
+<h1 id="Export-and-Import"><a href="#Export-and-Import" class="headerlink" title="Export and Import"></a>Export and Import</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pipenv lock</span><br><span class="line"></span><br><span class="line">// move Pipfile.lock to somewhere</span><br><span class="line"></span><br><span class="line">pipenv install --ignore-pipfile</span><br></pre></td></tr></table></figure>
+<h1 id="File-‘-env’"><a href="#File-‘-env’" class="headerlink" title="File ‘.env’"></a>File ‘.env’</h1><p>add file called “.env”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SECRET_KEY = &quot;xxxx&quot;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -449,6 +454,8 @@ if( o.attr("src").indexOf("sinaimg") > 0 ){
           
             <a href="/tags/python/" rel="tag"># python</a>
           
+            <a href="/tags/pipenv/" rel="tag"># pipenv</a>
+          
         </div>
       
 
@@ -460,8 +467,8 @@ if( o.attr("src").indexOf("sinaimg") > 0 ){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/25/解决hexo博客新浪图床显示失败/" rel="next" title="解决hexo博客新浪图床显示失败">
-                <i class="fa fa-chevron-left"></i> 解决hexo博客新浪图床显示失败
+              <a href="/2020/01/17/使用python内置venv/" rel="next" title="使用python内置venv">
+                <i class="fa fa-chevron-left"></i> 使用python内置venv
               </a>
             
           </div>
@@ -469,10 +476,6 @@ if( o.attr("src").indexOf("sinaimg") > 0 ){
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/12/28/VScode配置python开发环境/" rel="prev" title="VScode配置python开发环境">
-                VScode配置python开发环境 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -677,7 +680,7 @@ if( o.attr("src").indexOf("sinaimg") > 0 ){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#为项目建立虚拟环境"><span class="nav-number">1.</span> <span class="nav-text">为项目建立虚拟环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#激活虚拟环境"><span class="nav-number">2.</span> <span class="nav-text">激活虚拟环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#给虚拟环境安装附加的python包"><span class="nav-number">3.</span> <span class="nav-text">给虚拟环境安装附加的python包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#退出当前环境"><span class="nav-number">4.</span> <span class="nav-text">退出当前环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#删除不再使用的环境"><span class="nav-number">5.</span> <span class="nav-text">删除不再使用的环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#看当前所有的环境"><span class="nav-number">6.</span> <span class="nav-text">看当前所有的环境</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#install-pipenv"><span class="nav-number">1.</span> <span class="nav-text">install pipenv</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#intall-packages"><span class="nav-number">2.</span> <span class="nav-text">intall packages</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Activate-env"><span class="nav-number">3.</span> <span class="nav-text">Activate env</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Deactivate"><span class="nav-number">4.</span> <span class="nav-text">Deactivate</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#requirements-txt-file"><span class="nav-number">5.</span> <span class="nav-text">requirements.txt file</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#install-just-in-dev"><span class="nav-number">6.</span> <span class="nav-text">install just in dev</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Uninstall"><span class="nav-number">7.</span> <span class="nav-text">Uninstall</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Use-another-version-python"><span class="nav-number">8.</span> <span class="nav-text">Use another version python</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Removing-venv"><span class="nav-number">9.</span> <span class="nav-text">Removing venv</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Update-packages"><span class="nav-number">10.</span> <span class="nav-text">Update packages</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Show-dependencies-graph"><span class="nav-number">11.</span> <span class="nav-text">Show dependencies graph</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Export-and-Import"><span class="nav-number">12.</span> <span class="nav-text">Export and Import</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#File-‘-env’"><span class="nav-number">13.</span> <span class="nav-text">File ‘.env’</span></a></li></ol></div>
             
 
           </div>
